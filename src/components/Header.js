@@ -1,11 +1,10 @@
 import { NavLink } from "react-router-dom"
 import { FiMenu } from "react-icons/fi"
 import logo from "../starter-code/assets/shared/logo.svg"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [width, setWidth] = useState(window.innerWidth)
 
   return (
     <>
