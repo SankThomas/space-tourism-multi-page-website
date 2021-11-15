@@ -44,7 +44,11 @@ p {
 }
 
 .header nav {
-  /* display: none; */
+  display: none;
+}
+
+.header nav.open {
+  display: block;
 }
 
 .header nav ul {
