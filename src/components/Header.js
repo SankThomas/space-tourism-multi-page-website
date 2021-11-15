@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom"
 import { FiMenu } from "react-icons/fi"
 import logo from "../starter-code/assets/shared/logo.svg"
-import { useState } from "react"
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const handleClick = () => {
+    const navbar = document.getElementById("navbar")
+
+    navbar.classList.toggle("open")
+  }
 
   return (
     <>
@@ -15,51 +18,51 @@ export default function Header() {
           </NavLink>
         </div>
 
-        {isOpen && (
-          <nav>
-            <ul className="flex items-center">
-              <li className="mx-2 py-5 text-gray-400 font-semibold">
-                <NavLink
-                  to="/"
-                  exact
-                  activeClassName="text-white border-b-4 border-white pb-7"
-                >
-                  <span>00</span> Home
-                </NavLink>
-              </li>
-              <li className="mx-2 py-5 text-gray-400 font-semibold">
-                <NavLink
-                  to="/destination"
-                  exact
-                  activeClassName="text-white border-b-4 border-white pb-7"
-                >
-                  <span>01</span> Destination
-                </NavLink>
-              </li>
-              <li className="mx-2 py-5 text-gray-400 font-semibold">
-                <NavLink
-                  to="/crew"
-                  exact
-                  activeClassName="text-white border-b-4 border-white pb-7"
-                >
-                  <span>02</span> Crew
-                </NavLink>
-              </li>
-              <li className="mx-2 py-5 text-gray-400 font-semibold">
-                <NavLink
-                  to="/technology"
-                  exact
-                  activeClassName="text-white border-b-4 border-white pb-7"
-                >
-                  <span>03</span> Technology
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-        )}
+        {/* {isOpen && ( */}
+        <nav id="navbar">
+          <ul className="flex items-center">
+            <li className="mx-2 py-5 text-gray-400 font-semibold">
+              <NavLink
+                to="/"
+                exact
+                activeClassName="text-white border-b-4 border-white pb-7"
+              >
+                <span>00</span> Home
+              </NavLink>
+            </li>
+            <li className="mx-2 py-5 text-gray-400 font-semibold">
+              <NavLink
+                to="/destination"
+                exact
+                activeClassName="text-white border-b-4 border-white pb-7"
+              >
+                <span>01</span> Destination
+              </NavLink>
+            </li>
+            <li className="mx-2 py-5 text-gray-400 font-semibold">
+              <NavLink
+                to="/crew"
+                exact
+                activeClassName="text-white border-b-4 border-white pb-7"
+              >
+                <span>02</span> Crew
+              </NavLink>
+            </li>
+            <li className="mx-2 py-5 text-gray-400 font-semibold">
+              <NavLink
+                to="/technology"
+                exact
+                activeClassName="text-white border-b-4 border-white pb-7"
+              >
+                <span>03</span> Technology
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        {/* )} */}
 
         <div className="menu">
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button id="menu" onClick={handleClick}>
             <FiMenu className="text-white text-4xl" />
           </button>
         </div>
